@@ -5,5 +5,7 @@ fun main() {
         swordsJuggling = 2
     }
 
+    swordsJuggling = swordsJuggling!!.plus(1)
+
     println("你耍了$swordsJuggling" + "把劍!")
 }
