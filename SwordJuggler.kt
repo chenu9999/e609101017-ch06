@@ -3,7 +3,7 @@ import java.lang.IllegalStateException
 fun main() {
     var swordsJuggling: Int? = null
     val isJugglingProficient = (1..3).shuffled().last() == 3
-    if (isJugglingProficient) swordsJuggling = 2  //if else句型省略
+    if (isJugglingProficient) swordsJuggling = 2
 
     proficiencyCheck(swordsJuggling)
     swordsJuggling = swordsJuggling!!.plus(1)
@@ -14,3 +14,6 @@ fun main() {
 fun proficiencyCheck(swordsJuggling: Int?) {
     swordsJuggling ?: throw IllegalStateException("玩家不會耍劍")
 }
+
+class UnskilledSwordJugglerException() :
+    IllegalStateException("玩家不會耍劍")
