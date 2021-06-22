@@ -1,4 +1,4 @@
-import java.lang.IllegalStateException
+//import java.lang.IllegalStateException
 
 fun main() {
     var swordsJuggling: Int? = null
@@ -16,8 +16,9 @@ fun main() {
 }
 
 fun proficiencyCheck(swordsJuggling: Int?) {
-    swordsJuggling ?: throw UnskilledSwordJugglerException()
+    checkNotNull(swordsJuggling, { "玩家不會耍劍" })
+    //checkNotNull:如果參數值為null 則拋出IllegalStateException異常 不為null則返回值
 }
 
-class UnskilledSwordJugglerException() :
-    IllegalStateException("玩家不會耍劍")
+/*class UnskilledSwordJugglerException() :
+    IllegalStateException("玩家不會耍劍")*/
